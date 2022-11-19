@@ -12,6 +12,9 @@
   font-size: x-large;
   top: 0;
 }
+p {
+  user-select: none;
+}
 
 p span {
   font-weight: bolder;
@@ -30,6 +33,7 @@ p span {
   justify-items: center;
   align-items: center;
   position: absolute;
-  left: 64.5vh;
+  left: 45.5vw;
   top: 55px;
+  user-select: none;
 }

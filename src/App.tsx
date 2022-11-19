@@ -11,9 +11,7 @@ function App() {
   const undoHander = () => {
     const tempCollection = [...collection];
     const poppedPoint = tempCollection.pop();
-
     setPoppedCollection((prev) => [...prev, poppedPoint]);
-
     setCollection((prev: number[]) => tempCollection);
   };
 
@@ -30,7 +28,7 @@ function App() {
           Undo
         </button>
         <button disabled={poppedCollection.length < 1} onClick={redoHander}>
-          redo
+          Redo
         </button>
       </div>
       <div
