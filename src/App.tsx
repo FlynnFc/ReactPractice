@@ -18,19 +18,17 @@ function App() {
   };
 
   const redoHander = () => {
-    const endOfArray = poppedCollection.length - 1;
-    const temp = [...poppedCollection];
-    temp.pop();
-    setCollection((prev: number[]) => {
-      setPoppedCollection((prev) => [...temp]);
-      return [...prev, poppedCollection[endOfArray]];
-    });
+    const newPoint = [...poppedCollection];
+    const poppedPoint = newPoint.pop();
+    setPoppedCollection(newPoint);
+    setCollection((prev: number[]) => [...prev, poppedPoint]);
   };
-  console.log(poppedCollection);
   return (
     <>
       <div className="buttonContainer">
-        <button onClick={undoHander}>Undo</button>
+        <button disabled={collection.length < 1} onClick={undoHander}>
+          Undo
+        </button>
         <button disabled={poppedCollection.length < 1} onClick={redoHander}>
           redo
         </button>
