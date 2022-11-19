@@ -9,12 +9,12 @@ function App() {
   const [poppedCollection, setPoppedCollection] = useState<any[]>([]);
 
   const undoHander = () => {
-    console.log("Popped");
-    setCollection((prev: number[]) => {
-      const temp = [...prev];
-      setPoppedCollection((prev) => [...prev, temp.pop()]);
-      return temp;
-    });
+    const tempCollection = [...collection];
+    const poppedPoint = tempCollection.pop();
+
+    setPoppedCollection((prev) => [...prev, poppedPoint]);
+
+    setCollection((prev: number[]) => tempCollection);
   };
 
   const redoHander = () => {
