@@ -5,7 +5,7 @@ let totals = [];
 
 try {
   let data = fs.readFileSync("input.txt").toString();
-  const answer = data
+  data
     .trim()
     .split("\n")
     .map((el) => {
