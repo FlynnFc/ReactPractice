@@ -10,10 +10,7 @@ try {
   data.forEach((str) => {
     let string1 = str.slice(0, str.length / 2);
     let string2 = str.slice(str.length / 2);
-    let track = new Set();
-    for (let i = 0; i < string1.length; i++) {
-      track.add(string1[i]);
-    }
+    let track = new Set([...string1]);
     for (let i = 0; i < string2.length; i++) {
       if (track.has(string2[i])) {
         repeatedLetters[string2[i]] = repeatedLetters[string2[i]] + 1 || 1;
