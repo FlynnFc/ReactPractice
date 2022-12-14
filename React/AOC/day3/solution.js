@@ -28,13 +28,13 @@ try {
 
   for (letter in repeatedLetters) {
     if (hasLowerCase(letter)) {
-      letterVal = letter.codePointAt(0) - 96;
-      addingTotal = letterVal * repeatedLetters[letter];
+      const letterVal = letter.codePointAt(0) - 96;
+      const addingTotal = letterVal * repeatedLetters[letter];
       console.log(letter, addingTotal);
       total += addingTotal;
     } else {
-      letterVal = letter.codePointAt(0) - 38;
-      addingTotal = letterVal * repeatedLetters[letter];
+      const letterVal = letter.codePointAt(0) - 38;
+      const addingTotal = letterVal * repeatedLetters[letter];
       console.log(letter, addingTotal);
       total += addingTotal;
     }
