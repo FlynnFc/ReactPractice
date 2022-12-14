@@ -30,7 +30,6 @@ try {
     if (hasLowerCase(letter)) {
       const letterVal = letter.codePointAt(0) - 96;
       const addingTotal = letterVal * repeatedLetters[letter];
-      console.log(letter, addingTotal);
       total += addingTotal;
     } else {
       const letterVal = letter.codePointAt(0) - 38;
