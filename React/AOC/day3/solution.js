@@ -8,9 +8,9 @@ try {
 
   //extracting all repeated letters
   data.forEach((str) => {
-    let string1 = str.slice(0, str.length / 2);
-    let string2 = str.slice(str.length / 2);
-    let track = new Set([...string1]);
+    const string1 = str.slice(0, str.length / 2);
+    const string2 = str.slice(str.length / 2);
+    const track = new Set([...string1]);
     for (let i = 0; i < string2.length; i++) {
       if (track.has(string2[i])) {
         repeatedLetters[string2[i]] = repeatedLetters[string2[i]] + 1 || 1;
@@ -19,13 +19,12 @@ try {
     }
   });
 
-  console.log(repeatedLetters);
-
+  //Test if char is lower case
   function hasLowerCase(str) {
     return str.toUpperCase() != str;
   }
 
-  total = 0;
+  let total = 0;
 
   for (letter in repeatedLetters) {
     if (hasLowerCase(letter)) {
@@ -40,8 +39,8 @@ try {
       total += addingTotal;
     }
   }
-  console.log(total);
   //Solution to part 1
+  console.log(total);
 } catch (e) {
   console.log("Error:", e.stack);
 }
